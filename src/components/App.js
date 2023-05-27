@@ -29,7 +29,10 @@ const App = () => {
             max="10"
             id="rating"
             value={rating}
-            onChange={(e)=>setRating(Number(e.target.value))}
+            onChange={(e)=>{
+              setRating(parseInt(e.target.value))
+              console.log(rating);
+            }}
           />
           <span className='rating'>rating</span>
         </div>
