@@ -8,7 +8,7 @@ const App = () => {
 
   function handleChange(e){
     setComment(e.target.value)
-    if(e.target.value.length < 5 && e.target.value.length > 0){
+    if(e.target.value.length < 5){
       setCommentError(true)
     }
     else{
