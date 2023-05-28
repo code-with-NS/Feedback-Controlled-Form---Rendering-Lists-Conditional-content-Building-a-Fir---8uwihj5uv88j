@@ -18,26 +18,28 @@ const App = () => {
   function handleClick(e){
     e.preventDefault()
   }
+  const handleRating=(e)=>{setRating(parseInt(e.target.value))}
+
+
+
   return (
     <div id="main">
       <form>
         <div>
-          <label htmlFor='rating'>Rating: </label>
+          <label htmlFor='rating'>Rating:</label>
           <input 
             type="range"
             min="1"
             max="10"
             id="rating"
             value={rating}
-            onChange={(e)=>{
-              setRating(parseInt(e.target.value))
-              console.log(rating);
-            }}
+            onChange={handleRating}
+               
           />
-          <span className='rating'>rating</span>
+          <span className='rating'>{rating}</span>
         </div>
         <div>
-          <label htmlFor='comment'>Comment: </label>
+          <label htmlFor='comment'>Comment:</label>
           <textarea 
             id='comment'
             value = {comment}
@@ -45,7 +47,7 @@ const App = () => {
           />
           {
             commentError && (
-              <p style={{ color: 'red' }} className="comment-error">Comment must be atleast 5 characters.</p>
+              <p style={{ color: 'red' }} className="comment-error">Comment must be atleast 5 characters</p>
             )
           }
         </div>
